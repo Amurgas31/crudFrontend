@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (file) {
             try {
                 //Subir imagen al backend
-                const data = await updateImageToFolder(file, "products");
+                const data = await uploadImageToFolder(file, "products");
                 finalImageUrl = data.url || "";
             } catch (err) {
                 console.error("Error subiendo imagen:", err);
@@ -86,13 +86,13 @@ document.addEventListener("DOMContentLoaded", () => {
         // --- 9. Construción del payload para enviar a API ---
         const payload = {
             nombre: form.productName.value.trim(),
-            precio: Number(form.producPrice.value),
+            precio: Number(form.productPrice.value),
             descripcion: form.productDescription.value.trim(),
             stock: Number(form.productStock.value),
             fechaIngreso: form.productDate.value,
             categoriaId: Number(form.productCategory.value),
-            usuarioId: 2, // Por ahora fijo
-            image_url: finalImageUrl || null, // Campo correcto según backend
+            usuarioId: 2, //Por ahora fijo
+            imagen_url: finalImageUrl || null,
         };
 
         // --- 10. Crear o actualizar producto ---
