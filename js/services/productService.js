@@ -1,7 +1,7 @@
 const API_URL = 'http://localhost:8080/api/products';
 
 export async function getProducts(page = 0, size = 10) {
-    const res = await fetch(`${API_URL}/getAllProducts?pase=${page}&size=${size}`);
+    const res = await fetch(`${API_URL}/getAllProducts?page=${page}&size=${size}`);
     return res.json();
 }
 

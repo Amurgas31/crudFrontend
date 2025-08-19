@@ -74,7 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         if (file) {
             try {
                 //Subir imagen al backend
-                const data = await uploadImageToFolder(file, "products");
+                const data = await uploadImageToFolder(file, "Productos");
                 finalImageUrl = data.url || "";
             } catch (err) {
                 console.error("Error subiendo imagen:", err);
